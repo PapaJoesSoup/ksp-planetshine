@@ -23,9 +23,11 @@ namespace PlanetShine
             GameObject obj = new GameObject ("Line");
             LineRenderer line = obj.AddComponent< LineRenderer > ();
             line.material = new Material (Shader.Find ("Particles/Additive"));
-            line.SetColors (startColor, endColor);
-            line.SetWidth (0.05f, 0.05f); 
-            line.SetVertexCount (2);
+            line.endColor = endColor;
+            line.startColor = startColor;
+            line.startWidth = 0.05f;
+            line.endWidth = 0.05f;
+            line.positionCount = 2;
             return line;
         }
 
